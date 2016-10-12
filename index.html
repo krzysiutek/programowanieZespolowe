@@ -1,0 +1,24 @@
+<html>
+	<head>
+	    <title>Programowanie zespołowe</title>
+	    <link rel="stylesheet" type="text/css" href="/leftSideMenu/leftSideMenu.css">
+ 	</head>
+	<body ng-app="myApp"> 
+		<div class="body-container">
+			<div ng-include=" '/topmenu/topMenu.tpl.html' "></div>
+			<div ng-include=" '/leftSideMenu/leftSideMenu.tpl.html' "></div>
+			<div ng-include=" '/footer/footer.tpl.html' "></div>
+				
+			<div class="main-page ng-view">
+				<!-- <div ng-include=" '/homePage/home.tpl.html' ">a</div> -->
+			</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+			<script src="/app.js"></script>
+			<script src="/leftSideMenu/leftSideMenu.controller.js"></script>
+			<script src="/homePage/home.controller.js"></script>
+			<script src="/secondPage/secondPage.controller.js"></script>
+			<script src="/topmenu/topMenu.controller.js"></script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+
+.left-side-menu {
+	position: fixed;
+	top: 7%;
+}
+
+.left-side-menu > a {
+	left: 0;
+	display: block;
+}
+
+.top-menu {
+	position: fixed;
+	text-align: center;
+}
+
+.main-page {
+	margin-left: 15%;
+	position: absolute;
+	top: 7%;
+}
+
+.footer {
+	position: fixed;
+	bottom: 3%;
+	width: 100%;
+	text-align: center;
+	float: bottom;
+}
