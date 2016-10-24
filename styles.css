@@ -17,7 +17,12 @@
 .main-page {
 	margin-left: 15%;
 	position: absolute;
-	top: 7%;
+	top: 7%;    
+	height: 85%;
+    overflow: overlay;
+    /*żeby ukryć boczny pasek przewijanie*/
+    padding-right: 5%;
+    margin-right: -2%;
 }
 
 .footer {

@@ -3,10 +3,13 @@ HERE IS HOME PAGE!!!!!!!!!!!!!!
 
 <div class="login" >Jakieś logowanie
 	<form ng-submit="login()" method="post" autocomplete="true">
-		Username: <input type="text" name="login" placeholder="Your username" required="true" ng-model="loginData.username"><br>
-		Password: <input type="password" name="password" placeholder="Your password" ng-model="loginData.password"><br>
-		<input type="submit" value="Submit">
+		Nazwa użytkownika: <input type="text" name="login" placeholder="Your username" required="true" ng-model="loginData.username"><br>
+		Hasło: <input type="password" name="password" placeholder="Your password" ng-model="loginData.password"><br>
+		<input type="submit" value="Zaloguj">
+		<div><a href="#passwordReminder">Nie pamiętam hasła</a></div>
 	</form>
+	<span><a href="#registration">Zarejestruj się!</a></span>
+	
 </div>
 
 <br>

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('homeCtrl', function mainCtrl($scope, $window, $http, generalService) {
+app.controller('homeCtrl', function homeCtrl($scope, $window, $http, generalService) {
 	$scope.siema = 'Siemanko, helloł';
 	$scope.loginData = {
 		username: null,
