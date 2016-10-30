@@ -28,6 +28,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "registration/registration.tpl.html",
 			controller: "registrationCtrl"
 		})
+		.when("/rooms", {
+			name: "rooms",
+			templateUrl: "/rooms/rooms.tpl.html",
+			controller: "roomsCtrl"
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
