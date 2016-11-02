@@ -18,26 +18,35 @@ function setConnectionInfo () {
 }
 
 // connectDB();
-
+var counter = 0;
 // connect to Database 
 function connectDB () {
-    con.connect(function(err){
-        if(err){
-          console.log('Error connecting to Db');
-          return;
-        }
-        console.log('Connection established');
+    return new Promise (function(resolve, reject) {
+
+        con.connect(function(err){
+            counter++;
+            console.log("counter " + counter);
+            if(err){
+              console.log('Error connecting to Db');
+              reject(false);
+            }
+            console.log('Connection established');
+            resolve(true);
+        });
     });
 }
 
 // get data 
 function select (query) {
     query = query || 'SELECT * FROM users'
-    con.query(query, function(err,rows) {
-        if(err) throw err;
+    return new Promise (function (resolve, reject) {
+        con.query(query, function(err,rows) {
+            if(err) throw err;
 
-        console.log('Data received from Db:\n');
-        console.log(rows);
+            console.log('Data received from Db:\n');
+            console.log(rows);
+            resolve(rows);
+        });
     });
 }
 

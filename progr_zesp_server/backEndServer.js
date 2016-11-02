@@ -1,7 +1,6 @@
 var CONFIG = {
     port: 8001,
-    allowedOrigins: ['http://localhost:3000', 'http://127.0.0.1:3000'],
-    // dbUrl: 'mongodb://localhost/test'
+    allowedOrigins: ['http://localhost:3000', 'http://127.0.0.1:3000']
 };
 
 var express = require('express');
@@ -10,7 +9,6 @@ var serverApp = express();
 
 var database = require('./mySqlConnection.js');
 database.setConnectionInfo();
-// var models = require('./model')(mongoose);
 
 serverApp.use(bodyParser.urlencoded({
     extended: false
@@ -27,6 +25,8 @@ serverApp.use(function(req, res, next) {
 
     if (CONFIG.allowedOrigins.indexOf(origin) > -1) {
         res.setHeader('Access-Control-Allow-Origin', origin);
+    } else {
+        res.setHeader('Access-Control-Allow-Origin', '*');
     }
 
     // Request methods you wish to allow
@@ -43,7 +43,8 @@ serverApp.use(function(req, res, next) {
     next();
 });
 
-require('./routes/users')(serverApp);
+require('./routes/users')(serverApp, database);
+require('./routes/registration')(serverApp, database);
 // require('./routes/benchmark')(serverApp, models);
 // require('./routes/addons')(serverApp, models);
 // require('./routes/materials')(serverApp, models);

@@ -1,12 +1,19 @@
 <div><br><br>
 AND THIS IS REGISTRATION PAGE!!!!!!!!!!!!!!
-	<div class="registration" >Rejestracja
-		<form ng-submit="register()" method="post" autocomplete="true">
-			Nazwa użytkownika: <input type="text" name="login" placeholder="Your username" required="true" ng-model="registrationData.username"><br>
-			Hasło: <input type="password" name="password" placeholder="Your password" ng-model="registrationData.password"><br>
-			Powtórz hasło: <input type="password" name="password" placeholder="Your password" ng-model="registrationData.repeatedPassword"><br>
-			<input type="submit" value="Zarejestruj">
-		</form>
+	<div ng-if="!registered">
+		<div class="registration" >Rejestracja
+			<form ng-submit="register()" method="post" autocomplete="true">
+				Nazwa użytkownika: <input type="text" name="login" placeholder="Your username" required="true" ng-model="registrationData.username"><br>
+				Hasło: <input type="password" name="password" placeholder="Your password" ng-model="registrationData.password"><br>
+				Powtórz hasło: <input type="password" name="password" placeholder="Your password" ng-model="registrationData.repeatedPassword"><br>
+				<input type="submit" value="Zarejestruj">
+			</form>
+		</div>
 	</div>
-	<a href="#home">Powrót</a>
+	<div ng-if="registered">
+		<span><h1>User registered!</h1></span>
+		<span>Twoja nazwa użytkownika:</span>
+		<span>{{ registrationData.username }}</span>
+	</div>
+	<a href="#home">Powrót</a><button ng-click="closeConnection()">Close</button>
 </div>

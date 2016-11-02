@@ -27,3 +27,6 @@ Baza danych:
 5) Podaj œcie¿kê do room_reservation.sql i kliknij OK
 6) Enjoy
 
+
+MySql - JS connector:
+https://www.sitepoint.com/using-node-mysql-javascript-client/

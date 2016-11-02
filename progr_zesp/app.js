@@ -5,6 +5,9 @@ var app = angular.module('myApp', ['ngRoute']);
 app.controller('myAppCtrl', function myAppCtrl($scope, sessionService) {
 	$scope.session = sessionService;
 })
+app.constant('appConst', {
+	'serverPort': 8001
+})
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.
 		when('/', {
