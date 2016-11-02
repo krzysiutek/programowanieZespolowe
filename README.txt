@@ -14,6 +14,10 @@ Odpalenie projektu:
 	2) wpisujemy 'node backEndServer.js'
 	3) back end dzia³a
 
+UWAGA!:
+	Poniewa¿ node.js wymaga ka¿dorazowego prze³adowanie po jakiejkolwiek zmianie, dobrze jest zainstalowaæ sobie coœ w stylu nodemon
+'npm install nodemon -g' (-g instaluje globalnie)
+apke odpalamy wtedy: 'nodemon fronEndServer.js' i analogicznie 'nodemon backEndServer.js'
 
 Baza danych:
 1) Pobierz XAMPP i zainstaluj
