@@ -1,8 +1,19 @@
-Odpalenie serwera Node.js:
-1) Zainstaluj NodeJS z https://nodejs.org/en/ wersja 4.6.0 wystarczy
-2) Otwórz cmd i wpisz npm install http-server -g
-3) Wpisz http-server /sciezka/do/repozytorium (musi ju¿ w nim coœ byæ)
-4) Otwórz przegl¹darkê i wpisz localhost:8080
+Instalcja express i body_parser
+1) W katalogu progr_zesp_server otwórz cmd i wpisz 'npm install express' -> enter, a natêpnie wpisz 'npm install body-parser' -> enter
+2) powtórz w katalogu progr_zesp
+
+
+Odpalenie projektu:
+    I. Front-end:
+	1) przechodzimy do katalogu progr_zesp i odpalamy cmd
+	2) wpisujemy 'node frontEndServer.js'
+	3) uruchamia siê serwer i mo¿emy w przegl¹darce wpisaæ 'localhost:3000'
+	4) front end dzia³a
+    II. Back-end:
+	1) przechodzimy do katalogu progr_zesp_server i odpalamy cmd
+	2) wpisujemy 'node backEndServer.js'
+	3) back end dzia³a
+
 
 Baza danych:
 1) Pobierz XAMPP i zainstaluj
@@ -11,3 +22,4 @@ Baza danych:
 4) Klik na mysql i 'Import' na pasku na œrodku na górze 
 5) Podaj œcie¿kê do room_reservation.sql i kliknij OK
 6) Enjoy
+
