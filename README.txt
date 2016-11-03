@@ -1,3 +1,16 @@
+Dodawanie nowych podstron do projektu:
+1) w katalogu progr_zesp tworzymy katalog z nazw¹ podstrony, np. users
+2) tworzymy dwa pliki, jeden z html, np. users.tpl.html oraz users.controller.js
+3) mozemy narazie skopiowaæ zawartoœæ plików z innych, ALE trzeba pamiêtaæ o dodaniu w index.html nowego <script> z œcie¿k¹ do pliku js ORAZ o nadaniu kontrolerowi jakiejœ nazwy np. usersCtrl
+
+Jeœli chcemy pobrac dane z bazy:
+1) musimy wys³aæ $http.post lub $http.get (patrz: registration)
+2) w katalogu progr_zesp_server/routes powinien byæ plik w którym jest obs³uga $http.post/get (patrz: registration)
+3) do pliku backEndServer.js dodajemy linijkê z required(./nazwapliku.js)(serverApp, database) (na dole w pliku przyk³ad)
+4) wykorzystujemy funkcjê np. database.insert(query)
+5) kiedy funkcja zwróci wartoœæ musimy wys³aæ response
+
+
 Instalcja express i body_parser
 1) W katalogu progr_zesp_server otwórz cmd i wpisz 'npm install express' -> enter, a natêpnie wpisz 'npm install body-parser' -> enter
 2) powtórz w katalogu progr_zesp
