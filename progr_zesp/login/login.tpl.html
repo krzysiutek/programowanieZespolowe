@@ -1,0 +1,23 @@
+<div><br><br>
+AND THIS IS LOGIN PAGE!!!!!!!!!!!!!!
+
+	<div ng-if="!logged">
+		<div class="login" >Zaloguj się 
+			<form ng-submit="login()" method="post" autocomplete="true">
+				<label for="login">Nazwa użytkownika lub e-mail:</label>
+				<input type="text" name="login" placeholder="Your username" required="true" ng-model="loginData.username">
+					<span style="color: red;" ng-if="userExist"> Nazwa użytkownika jest już zajęta!</span>
+					<br>
+				<label for="password">Hasło:</label>
+				<input type="password" name="password" placeholder="Your password" ng-model="loginData.password">
+					<br>
+				
+				<input type="submit" value="Zaloguj">
+			</form>
+		</div>
+	</div>
+	<div ng-if="logged"><h1>LOGGED :) </h1></div>
+	<div ng-if="error"><h1>Wystąpił błąd! :( </h1></div>
+	
+	<a href="#home">Powrót</a>
+</div>

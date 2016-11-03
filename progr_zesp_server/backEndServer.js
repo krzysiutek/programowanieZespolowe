@@ -45,7 +45,7 @@ serverApp.use(function(req, res, next) {
 
 require('./routes/users')(serverApp, database);
 require('./routes/registration')(serverApp, database);
-// require('./routes/benchmark')(serverApp, models);
+require('./routes/login')(serverApp, database);
 // require('./routes/addons')(serverApp, models);
 // require('./routes/materials')(serverApp, models);
 // require('./routes/price')(serverApp, models);

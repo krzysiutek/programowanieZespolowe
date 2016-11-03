@@ -5,7 +5,7 @@ module.exports = function(app, database) {
             
             res.send({ dupa: 'dupa'});
             // app.connectDB();
-            console.log("dupa dupa dupa")
+            console.log("dupa dupa dupa users")
         });
 
         app.get('/users', function(req, res) {

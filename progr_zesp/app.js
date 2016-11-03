@@ -31,6 +31,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "registration/registration.tpl.html",
 			controller: "registrationCtrl"
 		})
+		.when("/login", {
+			name: "login",
+			templateUrl: "login/login.tpl.html",
+			controller: "loginCtrl"
+		})
 		.when("/rooms", {
 			name: "rooms",
 			templateUrl: "/rooms/rooms.tpl.html",

@@ -13,7 +13,7 @@ function setConnectionInfo () {
         password: "",
         database: "mysql" 
     });
-
+    
 	console.log("setConnectionInfo ");
 }
 
@@ -28,7 +28,7 @@ function connectDB () {
             console.log("counter " + counter);
             if(err){
               console.log('Error connecting to Db');
-              reject(false);
+              reject(err);
             }
             console.log('Connection established');
             resolve(true);
@@ -38,14 +38,18 @@ function connectDB () {
 
 // get data 
 function select (query) {
-    query = query || 'SELECT * FROM users'
+    query = query || 'SELECT * FROM users';
+    console.log("query " + query);
     return new Promise (function (resolve, reject) {
         con.query(query, function(err,rows) {
-            if(err) throw err;
-
-            console.log('Data received from Db:\n');
-            console.log(rows);
-            resolve(rows);
+            if(err) {
+                console.log('select reject')
+                reject(err);
+            } else {
+                console.log('select resolve, data received from Db:\n');
+                console.log(rows);
+                resolve(rows);
+            }
         });
     });
 }
@@ -54,10 +58,16 @@ function select (query) {
 function insert (query, data) {
     query = query || 'INSERT INTO users SET ?'; 
     data = data || { name: 'Winnie', login: 'winnie_login', pass: 'password', surname: 'The Pooh', room: 104, email: 'WinnieThePooh@100milesWood.mw', phone: 044444444, admin_privilage: 0 };
-    con.query(query, data, function(err,res){
-        if(err) throw err;
+    return new Promise (function (resolve, reject) {
+        con.query(query, data, function(err,res){
+            if(err) {
+                reject();
+            } else {
+                resolve(res);
+                console.log('Last insert ID:', res.insertId);
+            }
 
-        console.log('Last insert ID:', res.insertId);
+        });
     });
 }
 
@@ -89,6 +99,7 @@ function remove (query, data) {
 
 // end connection
 function endConnection () {
+    console.log("Connection ended");
     con.end(function(err) {
         console.log(err);
         // The connection is terminated gracefully

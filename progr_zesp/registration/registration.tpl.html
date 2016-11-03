@@ -1,15 +1,39 @@
 <div><br><br>
 AND THIS IS REGISTRATION PAGE!!!!!!!!!!!!!!
+
 	<div ng-if="!registered">
 		<div class="registration" >Rejestracja
 			<form ng-submit="register()" method="post" autocomplete="true">
-				Nazwa użytkownika: <input type="text" name="login" placeholder="Your username" required="true" ng-model="registrationData.username"><br>
-				Hasło: <input type="password" name="password" placeholder="Your password" ng-model="registrationData.password"><br>
-				Powtórz hasło: <input type="password" name="password" placeholder="Your password" ng-model="registrationData.repeatedPassword"><br>
+				<label for="name">Imię:</label>
+				<input type="text" name="name" placeholder="Your name" ng-model="registrationData.name">
+					<br>
+				<label for="surname">Nazwisko:</label>
+				<input type="text" name="surname" placeholder="Your last name" ng-model="registrationData.surname">
+					<br>
+				<label for="login">Nazwa użytkownika:</label>
+				<input type="text" name="login" placeholder="Your username" required="true" ng-model="registrationData.username">
+					<span style="color: red;" ng-if="userExist"> Nazwa użytkownika jest już zajęta!</span>
+					<br>
+				<label for="password">Hasło:</label>
+				<input type="password" name="password" placeholder="Your password" ng-model="registrationData.password">
+					<br>
+				<label for="repeatedPassword">Powtórz hasło:</label>
+				<input type="password" name="repeatedPassword" placeholder="Repeat your password" ng-model="registrationData.repeatedPassword">
+					<br>
+				<label for="room">Numer pokoju:</label>
+				<input type="text" name="room" placeholder="Number of your room" ng-model="registrationData.room">
+					<br>
+				<label for="email">Adres e-mail:</label>
+				<input type="text" name="email" placeholder="E-mail address" ng-model="registrationData.email">
+					<br>
+				<label for="phone">Numer telefonu:</label>
+				<input type="text" name="phone" placeholder="Phone number" ng-model="registrationData.phone">
+					<br>
 				<input type="submit" value="Zarejestruj">
 			</form>
 		</div>
 	</div>
+	<div ng-if="error"><h1>Wystąpił błąd! :( </h1></div>
 	<div ng-if="registered">
 		<span><h1>User registered!</h1></span>
 		<span>Twoja nazwa użytkownika:</span>

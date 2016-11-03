@@ -8,6 +8,8 @@ app.controller('registrationCtrl', function registrationCtrl($scope, $window, $l
 		repeatedPassword: null
 	}
 	$scope.registered = null;
+	$scope.userExist = null;
+	$scope.error = null;
 
 	$scope.register = function (a) {
 		if ($scope.registrationData.password === $scope.registrationData.repeatedPassword) {
@@ -24,10 +26,21 @@ app.controller('registrationCtrl', function registrationCtrl($scope, $window, $l
 			})
 			// if everything is ok handle response
 			.then(function (response) {
-				if (response.data) {
-					$scope.registered = true;	
+				$scope.error = false;
+				$scope.registered = false;
+				$scope.userExist = false;
+				$scope.userAdded = false;
+				if (response.data.userExist === true) {
+					$scope.userExist = true;	
+				} else if (response.data.userAdded) {
+					$scope.registered = true;
+					console.log("User registered!");
+				} else if (response.data.end) {
+					console.log("error");
+					$scope.error = true;
+				} else {
+					console.error("Wystąpił błąd podczas dodawania do bazy danych");
 				}
-				console.log("User registered!");
 			}, 
 			// in otherwise handle error
 			function (err) {
