@@ -46,6 +46,12 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/curators/curators.tpl.html",
 			controller: "curatorsCtrl"
 		})
+		.when("/crash", {
+			name: "crash",
+			parent: 'myAppCtrl',
+			templateUrl: "/crashModule/crash.tpl.html",
+			controller: "crashPageCtrl"
+		})
 		.otherwise({
 			redirectTo: '/'
 		});

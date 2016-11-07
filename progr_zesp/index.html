@@ -2,22 +2,31 @@
 	<head>
 	    <title>Programowanie zespołowe</title>
 	    <link rel="stylesheet" type="text/css" href="/styles.css">
+		<link rel="stylesheet" type="text/css" href="/libs/bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/libs/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="/libs/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+		
  	</head>
 	<body ng-app="myApp"> 
 		<div class="body-container" ng-controller="myAppCtrl">
 			<div ng-include=" '/topmenu/topMenu.tpl.html' "></div>
 			<div ng-include=" '/leftSideMenu/leftSideMenu.tpl.html' "></div>
 			<div ng-include=" '/footer/footer.tpl.html' "></div>
+
 				
 			<div class="main-page ng-view">
 				<!-- <div ng-include=" '/homePage/home.tpl.html' ">a</div> -->
 			</div>
-			<script src="/angular/angular.min.js"></script>
-			<script src="/angular/angular-route.min.js"></script>
 
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			<script src="/libs/angular.min.js"></script>
+			<script src="/libs/angular-route.min.js"></script>
+			<script src="/libs/jquery-3.1.1.min.min.js"></script>
+			<script src="/libs/jquery-3.1.1.js"></script>
+			<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+			<script src="bootstrap-3.3.7-dist/js/npm.js"></script>
+			<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 			<script src="/app.js"></script>
 			<script src="/leftSideMenu/leftSideMenu.controller.js"></script>
 			<script src="/homePage/home.controller.js"></script>
@@ -29,6 +38,8 @@
 			<script src="/curators/curators.controller.js"></script>
 			<script src="/generalService.js"></script>
 			<script src="/sessionService.js"></script>
+			<script src="/crashModule/crash.controller.js"></script>
+
 		</div>
 	</body>
 </html>
