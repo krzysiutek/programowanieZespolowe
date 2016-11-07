@@ -41,6 +41,13 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/rooms/rooms.tpl.html",
 			controller: "roomsCtrl"
 		})
+			.when("/crashPage", {
+			name: "crashPage",
+			parent: 'myAppCtrl',
+			templateUrl: "/crashPage/crash.tpl.html",
+			controller: "crashPageCtrl"
+		})
+		
 		.otherwise({
 			redirectTo: '/'
 		});

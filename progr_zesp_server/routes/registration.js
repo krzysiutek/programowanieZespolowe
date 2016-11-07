@@ -26,7 +26,7 @@ module.exports = function(app, database) {
                                 
                                 res.send({ userExist: true });
                                 // database.endConnection();
-                                console.log("User exist in DB ");
+                                console.log("User already exists in DB ");
                             } else if (!result.length) {
                                 var userAdded = addUser(data);
                                 if (userAdded) {
