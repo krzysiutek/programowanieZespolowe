@@ -41,6 +41,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/rooms/rooms.tpl.html",
 			controller: "roomsCtrl"
 		})
+		.when("/curators", {
+			name: "curators",
+			templateUrl: "/curators/curators.tpl.html",
+			controller: "curatorsCtrl"
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
