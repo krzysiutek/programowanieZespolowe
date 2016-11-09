@@ -25,7 +25,7 @@ app.controller('curatorsCtrl', function curatorsCtrl($scope, $location, $http, g
 			// }
 			$scope.curatorData = {
 				name: 'Andrzej',
-				surname: 'BBBBB	',
+				surname: 'Duda	',
 				phone: 5656565,
 				email: 'andrzej@gmail.com',
 				room: 111

@@ -11,7 +11,7 @@ function setConnectionInfo () {
         host: "localhost",
         user: "root",
         password: "",
-        database: "progsapp" 
+        database: "mysql" 
     });
     
 	console.log("setConnectionInfo ");
