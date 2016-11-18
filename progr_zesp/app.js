@@ -52,6 +52,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/crashModule/crash.tpl.html",
 			controller: "crashPageCtrl"
 		})
+		.when("/adminPanel", {
+			name: "adminPanel",
+			templateUrl: "/adminPanel/adminPanel.tpl.html",
+			controller: "adminPanelCtrl"
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
