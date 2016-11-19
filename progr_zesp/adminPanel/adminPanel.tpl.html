@@ -1,0 +1,39 @@
+<div><br><br>
+<div class="col-lg-offset-6 col-lg-6 ">
+        <div class="well bs-component">
+            <form class="form-group" method="post" ng-submit="searchUser()">
+                <fieldset>
+                    <legend>Wyszukaj</legend>
+                    <div class="form-group" align="center">
+                        <input type="radio" name="search" value="login" checked="checked"> Login
+                        <input type="radio" name="search" value="name"> Imię i nazwisko
+                        <input type="radio" name="search" value="room"> Numer pokoju
+                    </div>
+                    <div ng-if="queryLogin" class="form-group" id="queryLogin">
+                        <label for="login" class="control-label">Login</label>
+                        <input class="form-control" id="login" name="login" type="text">
+                    </div>
+                    <div ng-if="queryName" class="form-group"  id="queryName">
+                        <label for="name" class="control-label">Imię</label>
+                        <input class="form-control" id="name" name="name" type="text">
+                        <label for="surname" class="control-label">Nazwisko</label>
+                        <input class="form-control" id="surname" name="surname" type="text">
+                    </div>
+					<div ng-if="queryRoom" class="form-group"  id="queryRoom">
+                        <label for="room" class="control-label">Numer pokoju</label>
+                        <input class="form-control" id="room" name="room" type="text">
+					</div>
+				
+                    <div class="form-group col-lg-4">
+                        <div class="control-label">
+                            <button type="submit" class="btn btn-primary" value="searchUser" name="submit">Wyszukaj
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+</div>
+	<a class="btn btn-primary" href="#adminPanel/addRoom">Dodaj salkę</a><br>
+	<a class="btn btn-primary" href="#home">Powrót</a>
+</div>
