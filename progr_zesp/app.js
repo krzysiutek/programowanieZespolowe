@@ -62,6 +62,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/rooms/addRoom.tpl.html",
 			controller: "addRoomCtrl"
 		})
+		.when("/bans", {
+			name: "bans",
+			templateUrl: "/bans/bans.tpl.html",
+			controller: "bansCtrl"
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
