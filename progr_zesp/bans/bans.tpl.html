@@ -1,0 +1,35 @@
+<div><br><br>
+<div class="col-lg-offset-6 col-lg-10 ">
+        <div class="well bs-component">
+            <form class="form-group" method="post" ng-submit="searchUser()">
+                <fieldset>
+                    <legend>Blokada użytkownika</legend>
+					<div class="form-group" id="userLogin">
+                        <label for="floor" class="control-label">Login</label>
+                        <input class="form-control" id="login" name="login" type="text">
+                    </div>
+					<div class="form-group" id="banRoom">
+                        <label for="floor" class="control-label">Salka</label>
+                        <input class="form-control" id="room" name="room" type="text">
+                    </div>
+					<div class="form-group" id="banStart">
+                        <label for="floor" class="control-label">Data rozpoczęcia</label>
+                        <input class="form-control" id="startDate" name="startDate" type="date">
+                    </div>
+					<div class="form-group" id="banStop">
+                        <label for="floor" class="control-label">Data zakończenia</label>
+                        <input class="form-control" id="stopDate" name="stopDate" type="date">
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <div class="control-label">
+                            <button type="submit" class="btn btn-primary" value="addBan" name="submit">Zablokuj
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+</div>
+	
+	<a href="#home">Powrót</a>
+</div>
