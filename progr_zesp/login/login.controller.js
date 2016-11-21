@@ -1,18 +1,22 @@
 'use strict';
 
-app.controller('loginCtrl', function loginCtrl($scope, $window, $location, $http, generalService, appConst) {
+app.controller('loginCtrl', function loginCtrl($scope, $window, $location, $http, generalService, appConst, sessionService) {
 	$scope.siema = 'login';
-	$scope.logged = null;	
+	// $scope.logged = null;	
 
 	$scope.loginData = {
 		username: null,
-		password: null
+		logged: null
+	}
+
+	if (sessionService.data && sessionService.data.logged) {
+		$scope.loginData = sessionService.data;
 	}
 
 	$scope.login = function (a) {
 		// pobranie z bazy danych username i password
 		// jeśli ok, przejdz dalej
-		generalService.saveLoginData($scope.loginData);
+		// generalService.saveLoginData($scope.loginData);
 
 		// sprawdź czy taki user istnieje
 		// jeśli tak, komunikat
@@ -28,9 +32,11 @@ app.controller('loginCtrl', function loginCtrl($scope, $window, $location, $http
 		// if everything is ok handle response
 		.then(function (response) {
 			$scope.error = false;
-			$scope.userExist = $scope.logged = false;
+			$scope.userExist = $scope.loginData.logged = false;
 			if (response.data.userExist === true) {
-				$scope.userExist = $scope.logged = true;	
+				$scope.userExist = $scope.loginData.logged = true;
+				generalService.saveLoginData($scope.loginData);
+				sessionService.saveSession($scope.loginData);	
 			} else if (response.data.end) {
 				console.log("error");
 				$scope.error = true;

@@ -1,10 +1,7 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div><br><br>
 AND THIS IS LOGIN PAGE!!!!!!!!!!!!!!
 
-	<div ng-if="!logged">
+	<div ng-if="!loginData.logged">
 		<div class="login" >Zaloguj się 
 			<form ng-submit="login()" method="post" autocomplete="true">
 				<label for="login">Nazwa użytkownika lub e-mail:</label>
@@ -23,7 +20,7 @@ AND THIS IS LOGIN PAGE!!!!!!!!!!!!!!
 		</div>
 	</div>
 
-	<div ng-if="logged" class="alert alert-danger fade in">
+	<div ng-if="loginData.logged" class="alert alert-danger fade in">
 	<a  class="close" ng-if="userExist"data-dismiss="alert" aria-label="close">&times;</a><h1>LOGGED :) </h1>
 	<div ng-if="error"><h1>Wystąpił błąd! :( </h1></div></div>
 	

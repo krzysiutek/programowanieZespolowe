@@ -1,9 +1,15 @@
-
+'use strict';
 
 var app = angular.module('myApp', ['ngRoute']);
-'use strict';
+
 app.controller('myAppCtrl', function myAppCtrl($scope, sessionService) {
 	$scope.session = sessionService;
+	var now = new Date().getTime();
+	var hour = 1000 * 60 * 60;
+
+	if (sessionService.data && (sessionService.data.time + hour) < now) {
+		sessionService.data.logged = false;
+	}
 })
 app.constant('appConst', {
 	'serverPort': 8001

@@ -11,7 +11,7 @@ function setConnectionInfo () {
         host: "localhost",
         user: "root",
         password: "",
-        database: "room_reservation" 
+        database: "mysql" 
     });
     
 	console.log("setConnectionInfo ");

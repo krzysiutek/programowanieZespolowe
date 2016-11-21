@@ -1,7 +1,7 @@
 <div><br><br><br>
 HERE IS HOME PAGE!!!!!!!!!!!!!!
 
-<div class="login" >Jakieś logowanie
+<div ng-if="!session.data.logged" class="login" >Jakieś logowanie
 
 	<form ng-submit="login()" method="post" autocomplete="true">
 		Nazwa użytkownika: 
