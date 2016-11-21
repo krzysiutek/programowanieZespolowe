@@ -1,5 +1,5 @@
 'use strict';
 
-app.controller('loginCtrl', function loginCtrl($scope, $window, $location, $http, generalService, appConst) {
+app.controller('addRoomCtrl', function addRoomCtrl($scope, $window, $location, $http, generalService, appConst) {
 	
 })

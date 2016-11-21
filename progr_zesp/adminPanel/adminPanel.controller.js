@@ -1,8 +1,6 @@
 'use strict';
 
-app.controller('adminPanelCtrl', function curatorsCtrl($scope, $location, $http, generalService, appConst) {
+app.controller('adminPanelCtrl', function adminPanelCtrl($scope, $location, $http, generalService, appConst) {
 	
-	$scope.queryLogin=true;
-	$scope.queryName=true;
-	$scope.queryRoom=true;
+	$scope.query = 'login';
 })

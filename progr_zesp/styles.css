@@ -27,35 +27,40 @@
 
 .footer {
 	position: fixed;
-	bottom: 3%;
+	bottom: 0;
 	width: 100%;
 	text-align: center;
-	float: bottom;
+	float: bottom; 
+    background: rgb(255, 255, 255);
+}
+.footer > img {
+    height: 50px;
+    margin: 5px;
 }
 
 /*.login {
 	position: absolute;
 	right: 3%;
 }*/
-			calendar {
-				float: left;
-				display: block;
-				box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				background: white;
-				width: 300px;
-				border: solid 1px #cccccc;
-				margin-bottom: 10px;
-			}
-			calendar > div.header {
-				float: left;
-				width: 100%;
-				background: #2875c7;
-				height: 40px;
-				color: white;
-			}
-			
-			calendar > div.header > i.fa-angle-left {
+calendar {
+	float: left;
+	display: block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: white;
+	width: 300px;
+	border: solid 1px #cccccc;
+	margin-bottom: 10px;
+}
+calendar > div.header {
+	float: left;
+	width: 100%;
+	background: #2875c7;
+	height: 40px;
+	color: white;
+}
+
+calendar > div.header > i.fa-angle-left {
     text-align: left;
 }
 .fa-angle-left:before {

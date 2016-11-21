@@ -18,7 +18,7 @@
 			<div ng-include=" '/footer/footer.tpl.html' "></div>
 
 				
-			<div class="main-page ng-view">
+			<div class="ng-view" style="margin-left: 13%;">
 				<!-- <div ng-include=" '/homePage/home.tpl.html' ">a</div> -->
 			</div>
 
@@ -28,9 +28,9 @@
 			<script src="/libs/jquery-3.1.1.js"></script>
 			<script src="/libs/moment.min.js"></script>
 			<script src="/libs/moment-with-locales.js"></script>
-			<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-			<script src="bootstrap-3.3.7-dist/js/npm.js"></script>
-			<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+			<script src="/libs/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+			<script src="/libs/bootstrap-3.3.7-dist/js/npm.js"></script>
+			<script src="/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
 			<script src="/app.js"></script>
 			<script src="/leftSideMenu/leftSideMenu.controller.js"></script>
@@ -45,20 +45,7 @@
 			<script src="/sessionService.js"></script>
 			<script src="/calendarModule/calendar.controller.js"></script>			
 			<script src="/crashModule/crash.controller.js"></script>
-			<style src="/calendarModule/style.css"></style>
- 	</head>
-	<body ng-app="myApp"> 
-		<div class="body-container" ng-controller="myAppCtrl">
-			<div ng-include=" '/topmenu/topMenu.tpl.html' "></div>
-			<div ng-include=" '/leftSideMenu/leftSideMenu.tpl.html' "></div>
-			<div ng-include=" '/footer/footer.tpl.html' "></div>
-
-				
-			<div class="main-page ng-view">
-				
-				<!-- <div ng-include=" '/homePage/home.tpl.html' ">a</div> -->
-			</div>
-
+			<script src="/adminPanel/adminPanel.controller.js"></script>
 		</div>
 	</body>
 </html>
