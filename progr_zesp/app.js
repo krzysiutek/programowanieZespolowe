@@ -41,11 +41,16 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/rooms/rooms.tpl.html",
 			controller: "roomsCtrl"
 		})
-			.when("/crashPage", {
-			name: "crashPage",
+		.when("/crash", {
+			name: "crash",
 			parent: 'myAppCtrl',
-			templateUrl: "/crashPage/crash.tpl.html",
+			templateUrl: "/crashModule/crash.tpl.html",
 			controller: "crashPageCtrl"
+		})
+		.when("/calendar", {
+			name: "calendar",
+			templateUrl: "/calendarModule/calendar.html",
+			controller: "calendarCtrl"
 		})
 		
 		.otherwise({
