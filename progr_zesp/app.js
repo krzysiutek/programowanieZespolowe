@@ -73,6 +73,12 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/bans/bans.tpl.html",
 			controller: "bansCtrl"
 		})
+		.when("/calendar", {
+			name: "calendar",
+			templateUrl: "/calendarModule/calendar.html",
+			controller: "calendarCtrl"
+		})
+		
 		.otherwise({
 			redirectTo: '/'
 		});
