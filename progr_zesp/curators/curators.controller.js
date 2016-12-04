@@ -24,11 +24,11 @@ app.controller('curatorsCtrl', function curatorsCtrl($scope, $location, $http, g
 			// 	$scope.error = true;
 			// }
 			$scope.curatorData = {
-				name: response.user_name,
-				surname: response.user_surname,
-				phone: response.phone,
-				email: response.email,
-				room: response.room
+				name: response.data[0].user_name,
+				surname: response.data[0].user_surname,
+				phone: response.data[0].phone,
+				email: response.data[0].email,
+				room: response.data[0].user_room
 			}
 		}, 
 		// in otherwise handle error

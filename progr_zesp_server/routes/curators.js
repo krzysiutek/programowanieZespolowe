@@ -10,8 +10,8 @@ module.exports = function(app, database) {
                     database.select("SELECT u.name as user_name, u.surname as user_surname, u.room as user_room, u.email as email, u.phone as phone, r.name as room_name FROM users AS u INNER JOIN rooms AS r ON u.ID_user=r.ID_user ")
                         .then(function (result) {
                             if (result.length > 0) { 
-							console.log(result);
-							res.send({ result: result });
+							console.log("results ", result);
+							res.send(result);
                             } 
                         }, function (err) {
                             console.log("select error !!!! " + err); // wyst¹pi³ b³¹d mySQL'a
