@@ -1,5 +1,5 @@
 'use strict';
 
-app.controller("leftSideMenuCtrl", function topMenuCtrl ($scope) {
-	$scope.leftMenu = "left menu";
+app.controller("leftSideMenuCtrl", function leftSideMenuCtrl ($scope, sessionService) {
+	//
 })

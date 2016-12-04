@@ -33,8 +33,9 @@ app.controller('loginCtrl', function loginCtrl($scope, $window, $location, $http
 		.then(function (response) {
 			$scope.error = false;
 			$scope.userExist = $scope.loginData.logged = false;
-			if (response.data.userExist === true) {
-				$scope.userExist = $scope.loginData.logged = true;
+			if (response.data[0].userExist === true) {
+				$scope.loginData = response.data[0];
+				$scope.loginData.logged = true;
 				generalService.saveLoginData($scope.loginData);
 				sessionService.saveSession($scope.loginData);	
 			} else if (response.data.end) {

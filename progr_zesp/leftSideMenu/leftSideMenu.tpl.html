@@ -1,4 +1,4 @@
-<div class="left-side-menu">
+<div class="left-side-menu" ng-controller="leftSideMenuCtrl">
 MENU BOCZNE!
 	<a href="#home">Home</a>
 	<a href="#registration">Register</a>
@@ -6,5 +6,5 @@ MENU BOCZNE!
 	<a href="#secondPage">Do drugiej strony idz</a>
 	<a href="#crash">Modul usterek</a>
 	<a href="#calendar">Kalendarz - rezerwacje</a>
-	<a ng-if="role === admin || true" href="#adminPanel">Panel admina</a>
+	<a ng-if="session.data.role" href="#adminPanel">Panel admina</a>
 </div>
