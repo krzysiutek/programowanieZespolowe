@@ -2,18 +2,22 @@
 
 var app = angular.module('myApp', ['ngRoute']);
 
-app.controller('myAppCtrl', function myAppCtrl($scope, sessionService) {
+app.controller('myAppCtrl', function myAppCtrl($scope, $rootScope, sessionService, generalService) {
 	$scope.session = sessionService;
-	var now = new Date().getTime();
-	var hour = 1000 * 60 * 60;
 
-	if (sessionService.data && (sessionService.data.time + hour) < now) {
-		sessionService.data.logged = false;
-	}
-})
+	$rootScope.$on('$routeChangeSuccess', function(event, current) {
+		if (!sessionService.getSession()) {
+			return;
+		}
+		var loginData = generalService.getLoginData();
+        sessionService.updateSession(loginData);
+    });
+});
+
 app.constant('appConst', {
 	'serverPort': 8001
-})
+});
+
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.
 		when('/', {
@@ -56,7 +60,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 			name: "crash",
 			parent: 'myAppCtrl',
 			templateUrl: "/crashModule/crash.tpl.html",
-			controller: "crashPageCtrl"
+			controller: "crashCtrl"
 		})
 		.when("/adminPanel", {
 			name: "adminPanel",
@@ -77,6 +81,11 @@ app.config(['$routeProvider', function ($routeProvider) {
 			name: "calendar",
 			templateUrl: "/calendarModule/calendar.html",
 			controller: "calendarCtrl"
+		})
+		.when("/userProfile", {
+			name: "userProfile",
+			templateUrl: "/userModule/userProfile.tpl.html",
+			controller: "userProfileCtrl"
 		})
 		
 		.otherwise({

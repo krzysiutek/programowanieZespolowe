@@ -3,7 +3,8 @@
 app.factory('generalService', function () {
 	var loginData = {
 		username: null,
-		logged: null
+		logged: null,
+		role: null
 	};
 
 	function saveLoginData (data) {

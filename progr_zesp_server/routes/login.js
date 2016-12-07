@@ -24,7 +24,8 @@ module.exports = function(app, database) {
                             console.log("result selecta " + (result.length ? result[0].ID_user : 'empty list of users'));
                             if (result.length > 0) { // jeśli length > 0 oznacza to, że taki user już istnieje 
                                 // SPRAWDZIC JESZCZE CZY SIE HASLO ZGADZA!!!
-                                res.send({ userExist: true });
+                                result[0].userExist = true;
+                                res.send(result);
                                 console.log("User exist in DB ");
                             } else if (!result.length) {
                                 res.send({ userExist: false });
