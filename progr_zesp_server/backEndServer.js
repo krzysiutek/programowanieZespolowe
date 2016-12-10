@@ -47,6 +47,7 @@ require('./routes/users')(serverApp, database);
 require('./routes/registration')(serverApp, database);
 require('./routes/login')(serverApp, database);
 require('./routes/curators')(serverApp, database);
+require('./routes/bans')(serverApp, database);
 // require('./routes/materials')(serverApp, models);
 // require('./routes/price')(serverApp, models);
 
