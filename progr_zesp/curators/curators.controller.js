@@ -23,12 +23,14 @@ app.controller('curatorsCtrl', function curatorsCtrl($scope, $location, $http, g
 			// if (response.data.end) {
 			// 	$scope.error = true;
 			// }
-			$scope.curatorData = {
-				name: response.data[0].user_name,
-				surname: response.data[0].user_surname,
-				phone: response.data[0].phone,
-				email: response.data[0].email,
-				room: response.data[0].user_room
+			$scope.log=response.data;
+			
+			var tbody=document.getElementById('curatorsTable');
+			
+			for(var i=0;i<response.data.length;i++){
+				var tr="<tr>";
+				tr+="<td>"+response.data[i].user_name+" "+response.data[i].user_surname+"</td><td>"+response.data[i].phone+"</td><td>"+response.data[i].email+"</td><td>"+response.data[i].room_name+"</td></tr>"
+			tbody.innerHTML+=tr;
 			}
 		}, 
 		// in otherwise handle error
