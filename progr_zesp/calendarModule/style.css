@@ -101,6 +101,11 @@
 							background:#2875C7;
 							color:white;
 						}
+
+						&.reserved {
+							background: red !important;
+							/*color: red;*/
+						}
 					}
 					
 					&.names>span {

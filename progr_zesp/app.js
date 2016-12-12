@@ -51,6 +51,16 @@ app.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: "/rooms/rooms.tpl.html",
 			controller: "roomsCtrl"
 		})
+		.when("/rooms/:roomName?", {
+			name: "roomsDetail",
+			templateUrl: "/rooms/rooms.tpl.html",
+			controller: "roomsCtrl"
+		})
+		.when("/rooms/:roomName?/:floor?", {
+			name: "roomsDetail",
+			templateUrl: "/rooms/rooms.tpl.html",
+			controller: "roomsCtrl"
+		})
 		.when("/curators", {
 			name: "curators",
 			templateUrl: "/curators/curators.tpl.html",
