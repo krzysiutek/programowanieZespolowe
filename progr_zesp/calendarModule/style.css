@@ -9,7 +9,12 @@
 				box-sizing:border-box;
 				-moz-box-sizing:border-box;
 			} */
-
+/*.calendar-day {
+	.hours >span {
+		 height: 40% !important; 
+		 overflow-y: scroll;
+	}
+}*/
 			calendar {
 				float:left;
 				display:block;
@@ -114,3 +119,4 @@
 					}
 				}
 			}
+			

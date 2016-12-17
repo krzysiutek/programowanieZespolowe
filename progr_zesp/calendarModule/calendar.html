@@ -1,3 +1,34 @@
-<div>
+<div ng-show="!selected">
 	<calendar selected="day"></calendar>
+ selected: {{ selected }}
+
+</div>
+
+
+<div ng-show="selected">
+	<button id="back-to-calendar">Wróć do kalendarza</button>
+	<div>
+		<daypilot-calendar id="dp" config="weekConfig" events="events"></daypilot-calendar>
+	</div>
+	<div>
+	      New event:
+	      <button ng-click="add()">Add</button>
+	  </div>
+	  <div>
+	      First event:
+	      <button ng-click="move()">Move</button>
+	      <button ng-click="rename()">Rename</button>
+	  </div>
+	  <div>
+	      Object:
+	      <button ng-click="message()">Show Message</button>
+	  </div>
+	  <div>
+	      Events array (debug):
+	      <div ng-repeat="item in events">
+	          {{item}}
+	      </div>
+
+	  </div>
+	</div>
 </div>

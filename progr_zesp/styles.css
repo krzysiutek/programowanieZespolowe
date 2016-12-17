@@ -9,10 +9,10 @@
 	display: block;
 }
 
-/*.top-menu {
-	position: fixed;
-	text-align: center;
-}*/
+.top-menu {
+    /*position: fixed;*/
+    top: 0;
+}
 
 .main-page {
 	margin-left: 15%;

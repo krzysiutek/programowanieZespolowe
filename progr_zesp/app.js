@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute', 'daypilot']);
 
 app.controller('myAppCtrl', function myAppCtrl($scope, $rootScope, sessionService, generalService) {
 	$scope.session = sessionService;

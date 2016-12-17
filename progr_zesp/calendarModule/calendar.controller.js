@@ -1,72 +1,101 @@
-app.controller("calendarCtrl", function($scope) {
-    $scope.day = moment();
-});
+app.controller("calendarCtrl", function($scope, $timeout, $http) {
+	$scope.day = moment();
+	$scope.day.locale('pl');
 
-app.directive("calendar", function() {
-    return {
-        restrict: "E",
-        templateUrl: "calendarModule/calendar.tpl.html",
-        scope: {
-            selected: "="
-        },
-        link: function(scope) {
-            scope.selected = _removeTime(scope.selected || moment());
-            scope.month = scope.selected.clone();
+	$scope.selected;
+	$scope.events = [];
 
-            var start = scope.selected.clone();
-            start.date(1);
-            _removeTime(start.day(0));
+	var calendar = new DayPilot.Calendar("dp");
 
-            _buildMonth(scope, start, scope.month);
+	var event;
+	var backToCalendarButton = document.getElementById('back-to-calendar');
 
-            scope.select = function(day) {
-                scope.selected = day.date;  
-            };
+	backToCalendarButton.addEventListener('click', function () {
+		$scope.selected = null;
+		$scope.$digest();
+	});
 
-            scope.next = function() {
-                var next = scope.month.clone();
-                _removeTime(next.month(next.month()+1)).date(1);
-                scope.month.month(scope.month.month()+1);
-                _buildMonth(scope, next, scope.month);
-            };
+	// reaguje na wysłany event z calendar directive
+	$scope.$on('selected', function (event, value) {
+		$scope.selected = moment(value).format();
+		$scope.weekConfig = {
+			// locale: 'pl-pl',
+			headerDateFormat: "d-M-yyyy",
+			timeFormat: "hh:MM",
+			viewType: "Week", // also possible "Day"
+			startDate: $scope.selected,
+			onEventClick: function(args) {
+				if (event) {
+					event.backColor = undefined;
+				}
+				// alert("Event clicked: " + args.e.text());
 
-            scope.previous = function() {
-                var previous = scope.month.clone();
-                _removeTime(previous.month(previous.month()-1).date(1));
-                scope.month.month(scope.month.month()-1);
-                _buildMonth(scope, previous, scope.month);
-            };
-        }
+				// can be used to eg. move event to another time or remove or rename
+				event = args.e.data;
+				event.backColor = "#cccccc"
+				$scope.$digest();
+			},
+		}
+	
+	});
+	$scope.$watch('weekConfig.startDate', function (value) {
+		console.log(value)
+	})
+
+	$scope.weekConfig = {
+	};
+
+	// przykładowy event dla kalendarza
+	$scope.events = [
+	  {
+	      start: new DayPilot.Date("2016-12-17T10:00:00"),
+	      end: new DayPilot.Date("2016-12-17T14:00:00"),
+	      id: DayPilot.guid(),
+	      text: "First Event",
+	      message: "elo First Event"
+	  }
+	];
+
+	$scope.add = function () {
+		$scope.events.push({
+			start: new DayPilot.Date("2016-12-17T14:00:00"),
+		  	end: new DayPilot.Date("2016-12-17T15:00:00"),
+		  	message: "Elo",
+		  	id: DayPilot.guid(),
+		  	text: "Simple Event"
+		});
+	};
+	
+	$scope.move = function() {
+        var event = $scope.events[0];
+        event.start = event.start.addDays(1);
+        event.end = event.end.addDays(1);
     };
-    
-    function _removeTime(date) {
-        return date.day(0).hour(0).minute(0).second(0).millisecond(0);
-    }
 
-    function _buildMonth(scope, start, month) {
-        scope.weeks = [];
-        var done = false, date = start.clone(), monthIndex = date.month(), count = 0;
-        while (!done) {
-            scope.weeks.push({ days: _buildWeek(date.clone(), month) });
-            date.add(1, "w");
-            done = count++ > 2 && monthIndex !== date.month();
-            monthIndex = date.month();
-        }
-    }
+	$scope.rename = function() {
+		var index = $scope.events.indexOf(event);
+		$scope.events[index].text = "New name";
+	};
 
-    function _buildWeek(date, month) {
-        var days = [];
-        for (var i = 0; i < 7; i++) {
-            days.push({
-                name: date.format("dd").substring(0, 1),
-                number: date.date(),
-                isCurrentMonth: date.month() === month.month(),
-                isToday: date.isSame(new Date(), "day"),
-                date: date
-            });
-            date = date.clone();
-            date.add(1, "d");
-        }
-        return days;
-    }
+	// $scope.message = function() {
+	// 	$scope.calendar.message("Hi");
+	// };
+
+	function loadEvents() {
+        // // using $timeout to make sure all changes are applied before reading visibleStart() and visibleEnd()
+		//   $timeout(function() {
+		//       var params = {
+		//           start: $scope.week.visibleStart().toString(),
+		//           end: $scope.week.visibleEnd().toString()
+		//       }
+		//       $http.post("event.json", params).success(function(data) {
+		//           $scope.events = data;
+		//       });              
+		//   });
+
+		// !!!!! Pobierać z bazy zajete godziny
+	}
+
+
 });
+
