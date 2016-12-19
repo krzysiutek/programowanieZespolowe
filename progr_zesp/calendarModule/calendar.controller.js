@@ -4,6 +4,7 @@ app.controller("calendarCtrl", function($scope, $timeout, $http) {
 
 	$scope.selected;
 	$scope.events = [];
+	$scope.event = null;
 
 	var calendar = new DayPilot.Calendar("dp");
 
@@ -25,14 +26,14 @@ app.controller("calendarCtrl", function($scope, $timeout, $http) {
 			viewType: "Week", // also possible "Day"
 			startDate: $scope.selected,
 			onEventClick: function(args) {
-				if (event) {
-					event.backColor = undefined;
+				if ($scope.event) {
+					$scope.event.backColor = undefined;
 				}
 				// alert("Event clicked: " + args.e.text());
 
 				// can be used to eg. move event to another time or remove or rename
-				event = args.e.data;
-				event.backColor = "#cccccc"
+				$scope.event = args.e.data;
+				$scope.event.backColor = "#cccccc"
 				$scope.$digest();
 			},
 		}
@@ -42,8 +43,7 @@ app.controller("calendarCtrl", function($scope, $timeout, $http) {
 		console.log(value)
 	})
 
-	$scope.weekConfig = {
-	};
+	$scope.weekConfig = {};
 
 	// przykładowy event dla kalendarza
 	$scope.events = [
@@ -73,7 +73,7 @@ app.controller("calendarCtrl", function($scope, $timeout, $http) {
     };
 
 	$scope.rename = function() {
-		var index = $scope.events.indexOf(event);
+		var index = $scope.events.indexOf($scope.event);
 		$scope.events[index].text = "New name";
 	};
 
