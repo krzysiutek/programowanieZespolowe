@@ -1,14 +1,21 @@
 <div><br><br><br>
     <form action="mailto:twoj_adres_email" method="post">
-        Imię: <input type="text" name="imie" /> 
-        Nazwisko: <input type="text" name="nazwisko" /><br /><br/>
-        E-mail: <input type="text" name="e-mail" /><br />
-		Salka: <input type="text" name="salka" /><br />
-        Numer pokoju zgłaszającego usterkę: <input type="text" name="e-mail" /><br />
-        <textarea name="pytanie" cols="40" rows="5">Treść wiadomości</textarea><br />
-
+        <label for="imie">Imię: </label>
+        <input class="form-control" type="text" name="imie" placeholder="Imię" /> 
+        <label for="nazwisko">Nazwisko:</label>
+        <input class="form-control" type="text" name="nazwisko"  placeholder="Nazwisko"/><br /><br/>
+        <label for="email">E-mail:</label>
+        <input class="form-control" type="text" name="email" placeholder="Adres e-mail"/><br />
+		<label for="salka">Salka:</label>
+        <input class="form-control" type="text" name="salka"  placeholder="Nazwa salki"/><br />
+        <label for="nrpokoju">Numer pokoju zgłaszającego usterkę:</label>
+        <input class="form-control" type="text" name="nrpokoju" placeholder="Numer pokoju" /><br />
+        <textarea class="form-control" name="pytanie" cols="40" rows="5" placeholder="Treść wiadomości..."></textarea>
+        <br />
         </select><br />
-        <input type="reset" value="Wyczyść formularz" />
-        <input type="submit" value="Wyślij" />
+        <span style="display: flex;">
+            <input type="submit" value="Wyślij" class="btn btn-default btn-block submit-btn-crashes" />
+            <input type="reset" value="Wyczyść formularz" class="btn btn-default btn-block reset-btn-crashes"/>
+        </span>
     </form>
 </div>

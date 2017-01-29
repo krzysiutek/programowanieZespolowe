@@ -1,13 +1,13 @@
 <div><br><br>
-    <div class="col-lg-offset-6 col-lg-6 ">
+    <div>
             <div class="well bs-component">
                 <form class="form-group" method="post" ng-submit="searchUser()">
                     <fieldset>
                         <legend>Wyszukaj</legend>
                         <div class="form-group" align="center">
-                            <input type="radio" name="search" value="login" ng-model="query" checked="checked"> Login
-                            <input type="radio" name="search" value="name" ng-model="query"> Imię i nazwisko
-                            <input type="radio" name="search" value="room" ng-model="query"> Numer pokoju
+                            <input type="radio" name="search" value="login" ng-model="query" checked="checked" style="margin-left: 10px;"> Login
+                            <input type="radio" name="search" value="name" ng-model="query" style="margin-left: 10px;"> Imię i nazwisko
+                            <input type="radio" name="search" value="room" ng-model="query" style="margin-left: 10px;"> Numer pokoju
                         </div>
                         <div ng-if="query === 'login'" class="form-group" id="queryLogin">
                             <label for="login" class="control-label">Login</label>
@@ -24,9 +24,9 @@
                             <input class="form-control" id="room" name="room" type="text">
     					</div>
     				
-                        <div class="form-group col-lg-4">
+                        <div class="form-group" style="width: 30%;">
                             <div class="control-label">
-                                <button type="submit" class="btn btn-primary" value="searchUser" name="submit">Wyszukaj
+                                <button type="submit" class="btn btn-default btn-block " value="searchUser" name="submit">Wyszukaj
                                 </button>
                             </div>
                         </div>
@@ -34,6 +34,8 @@
                 </form>
             </div>
     </div>
-	<a class="btn btn-primary" href="#adminPanel/addRoom">Dodaj salkę</a><br>
-	<a class="btn btn-primary" href="#home">Powrót</a>
+    <span>
+    	<a class="btn btn-default btn-block " href="#adminPanel/addRoom">Dodaj salkę</a><br>
+    	<a class="btn btn-default btn-block " href="#home">Powrót</a>
+    </span>
 </div>

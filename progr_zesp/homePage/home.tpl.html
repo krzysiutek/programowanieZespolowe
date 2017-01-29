@@ -1,23 +1,20 @@
 <div><br><br><br>
-HERE IS HOME PAGE!!!!!!!!!!!!!!
+<span ng-if="!session.data.logged" style="display: flex;">
+	<div style="width: 30%; margin-left: 5%;" class="login" ng-controller="loginCtrl">
+		<div ng-include=" '/login/login.tpl.html' "></div>
+	</div>
 
-<div ng-if="!session.data.logged" class="login" >Jakieś logowanie
+	<div class="image-7ds">
+		<img src="\assets\7ds.jpg" alt="7DS PŁ">
+	</div>
+	<br>
+	<br>
+</span>
 
-	<!-- <form ng-submit="login()" method="post" autocomplete="true">
-		Nazwa użytkownika: 
-		<input type="text" class="form-control" name="login" placeholder="Your username" required="true" ng-model="loginData.username"><br>
-		Hasło:
-		<input type="password" class="form-control" name="password" placeholder="Your password" ng-model="loginData.password"><br>
-		<input type="submit" class="btn btn-default btn-block"  value="Zaloguj">
-		<div><a href="#passwordReminder">Nie pamiętam hasła</a></div>
-	</form> -->
-	<span><a href="#registration">Zarejestruj się!</a></span>
-	
+<hr style="border-top: 1px solid black">
+<div>
+	<div>AKTUALNOŚCI</div>
 </div>
-<div><a href="#rooms">ROOMS</a></div>
-
-<br>
-Standardowy fragment Lorem Ipsum, używany od XV w.
 <br>
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi <br>ut aliquip ex ea commodo consequa<br>t. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 <br>

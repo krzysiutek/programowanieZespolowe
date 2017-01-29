@@ -1,12 +1,14 @@
-<div class="left-side-menu" ng-controller="leftSideMenuCtrl">
-	<br>
-	<br>
-	MENU BOCZNE!
-	<a href="#home">Home</a>
-	<a href="#registration">Register</a>
-	<a href="#login">Login</a>
-	<a href="#secondPage">Do drugiej strony idz</a>
-	<a href="#crash">Modul usterek</a>
-	<a href="#calendar">Kalendarz - rezerwacje</a>
-	<a ng-if="session.data.role" href="#adminPanel">Panel admina</a>
+<div class="left-side-menu sidebar" ng-controller="leftSideMenuCtrl">
+	<!-- <br>
+	<br> -->
+	<div class="container-fluid "></div>
+		<ul class="nav sidebar-nav">
+			<li class="sidebar-brand"><a style="background-color: #333; " href="#home">Home</a></li>
+			<li><a style="background-color: #333;" href="#registration">Register</a></li>
+			<li><a style="background-color: #333;" href="#login">Login</a></li>
+			<!-- <li><a href="#secondPage">Do drugiej strony idz</a></li> -->
+			<li><a style="background-color: #333;" href="#crash">Modul usterek</a></li>
+			<li><a style="background-color: #333;" href="#calendar">Kalendarz - rezerwacje</a></li>
+			<li><a style="background-color: #333;" ng-if="session.data.role" href="#adminPanel">Panel admina</a></li>
+		</ul>
 </div>

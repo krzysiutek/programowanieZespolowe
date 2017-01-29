@@ -1,8 +1,8 @@
-<div><br><br>
-AND THIS IS LOGIN PAGE!!!!!!!!!!!!!!
-
+<div>
 	<div ng-if="!loginData.logged">
-		<div class="login" >Zaloguj się 
+		<div>Zaloguj się</div> </br>
+		<div class="login" >
+
 			<form ng-submit="login()" method="post" autocomplete="true">
 				<label for="login">Nazwa użytkownika lub e-mail:</label>
 				<input class="form-control" type="text" name="login" placeholder="Your username" required="true" ng-model="loginData.username">
